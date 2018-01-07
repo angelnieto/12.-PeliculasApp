@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+.main-container, header{
+  padding:2rem 6rem ;
+  margin:0;
+}
+header{
+  background-color: lightgrey;
+}
+li{
+  display:inline-block;
+}
+ul{
+  padding:0;
+}
+figure{
+  margin:0;
+}
+li article span{
+  display: inline-block;
+  position:relative;
+  top: -54px;
+  left: 10px;
+  max-width: 90%;
+}
+.card-text{
+  opacity: 0.5;
+  background-color: black;
+  color: white;
+}
+.card-img-overlay{
+  top:inherit;
+  right:inherit;
+}
+.card-img{
+  float:left;
+}
+.img-container{
+  width:1000px;
+}
+.img-column{
+  width:500px;
+  float:left;
+}
+.img-big{
+  width:500px;
+  height: 281px;
+}
+.img-little{
+  width: 250px;
+  height: 141px;
+}
