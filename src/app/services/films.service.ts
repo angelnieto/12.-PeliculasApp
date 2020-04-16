@@ -13,7 +13,7 @@ export class FilmsService {
   constructor(private jsonp:Jsonp) { }
 
   getPopulares(){
-    let url = `${ this.urlMoviedb }/discover/movie?sort_by=popularity.desc&api_key=${ this.apikey }&language=es&certification.gte=NC-17&certification_country=US&callback=JSONP_CALLBACK`;
+    let url = `${ this.urlMoviedb }/discover/movie?sort_by=popularity.desc&api_key=${ this.apikey }&language=es-ES&certification.gte=NC-17&certification_country=US&callback=JSONP_CALLBACK`;
 
     return this.jsonp.get(url).map(resp => {
       return resp.json()
@@ -21,7 +21,7 @@ export class FilmsService {
   }
 
   getPopularesParaEnanos(){
-    let url = `${ this.urlMoviedb }/discover/movie?sort_by=popularity.desc&api_key=${ this.apikey }&language=es&certification.lte=G&certification_country=US&callback=JSONP_CALLBACK`;
+    let url = `${ this.urlMoviedb }/discover/movie?sort_by=popularity.desc&api_key=${ this.apikey }&language=es-ES&certification.lte=G&certification_country=US&callback=JSONP_CALLBACK`;
 
     return this.jsonp.get(url).map(resp => {
       return resp.json()
@@ -36,7 +36,7 @@ export class FilmsService {
     date.setDate(date.getDate() + 7);
     let endDate = date.toLocaleDateString("zh-Hans-CN", options).replace(/\//g,'-');
       console.log("endDate: "+endDate);
-    let url = `${ this.urlMoviedb }/discover/movie?primary_release_date.gte=${ startDate }&primary_release_date.lte=${ endDate }&api_key=${ this.apikey }&language=es&callback=JSONP_CALLBACK`;
+    let url = `${ this.urlMoviedb }/discover/movie?primary_release_date.gte=${ startDate }&primary_release_date.lte=${ endDate }&api_key=${ this.apikey }&language=es-ES&callback=JSONP_CALLBACK`;
     console.log("url: "+url);
     return this.jsonp.get(url).map(resp => {
       return resp.json()
