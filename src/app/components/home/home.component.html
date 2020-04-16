@@ -11,7 +11,7 @@
         <li>
             <div class="img-container">
 
-              <!--      Primera columna   -->
+              <!--    Primera columna  -->
               <section class="img-column">
                 <article *ngFor="let film of peliculasEnCartelera1;let i = index">
                   <figure *ngIf="film.backdrop_path && i==0" class="card-img img-big">
@@ -41,7 +41,7 @@
                 </article>
             </section>
 
-              <!--      Segunda columna   -->
+              <!--    Segunda columna  -->
             <section class="img-column">
               <article *ngFor="let film of peliculasEnCartelera2;let j = index">
                 <figure *ngIf="film.backdrop_path && j==2" class="card-img img-big">
@@ -74,12 +74,12 @@
         </div>
       </li>
     </ul>
-    <h3>Populares</h3>
+<!--    <h3>Populares</h3>
     <ul>
         <li>
             <div class="img-container">
 
-              <!--      Primera columna   -->
+                    Primera columna
               <section class="img-column">
                 <article *ngFor="let film of populares1;let i = index">
                   <figure *ngIf="film.backdrop_path && i==0" class="card-img img-big">
@@ -109,7 +109,7 @@
                 </article>
             </section>
 
-              <!--      Segunda columna   -->
+                    Segunda columna
             <section class="img-column">
               <article *ngFor="let film of populares2;let j = index">
                 <figure *ngIf="film.backdrop_path && j==2" class="card-img img-big">
@@ -141,14 +141,14 @@
           </section>
         </div>
       </li>
-    </ul>
+    </ul> -->
     <br>
-    <h3>Populares entre los más pequeños</h3>
+<!--    <h3>Populares entre los más pequeños</h3>
     <ul>
         <li>
             <div class="img-container">
 
-              <!--      Primera columna   -->
+                  Primera columna
               <section class="img-column">
                 <article *ngFor="let film of popularesParaEnanos1;let i = index">
                   <figure *ngIf="film.backdrop_path && i==0" class="card-img img-big">
@@ -178,7 +178,7 @@
                 </article>
             </section>
 
-              <!--      Segunda columna   -->
+                  Segunda columna
             <section class="img-column">
               <article *ngFor="let film of popularesParaEnanos2;let j = index">
                 <figure *ngIf="film.backdrop_path && j==2" class="card-img img-big">
@@ -210,6 +210,6 @@
           </section>
         </div>
       </li>
-    </ul>
+    </ul> -->
 
 </div>
