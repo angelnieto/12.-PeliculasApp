@@ -17,20 +17,20 @@ export class HomeComponent implements OnInit {
   constructor(private service:FilmsService) { }
 
   ngOnInit() {
-    // this.service.getPopulares().subscribe(data =>{
-    //   if(data.results.length>6){
-    //     this.populares1 = data.results.slice(0,3);
-    //     this.populares2 = data.results.slice(3,6);
-    //   }
-    //   console.log(data);
-    // })
-    // this.service.getPopularesParaEnanos().subscribe(data =>{
-    //   if(data.results.length>6){
-    //     this.popularesParaEnanos1 = data.results.slice(0,3);
-    //     this.popularesParaEnanos2 = data.results.slice(3,6);
-    //   }
-    //   console.log(data);
-    // })
+    this.service.getPopulares().subscribe(data =>{
+      if(data.results.length>6){
+        this.populares1 = data.results.slice(0,3);
+        this.populares2 = data.results.slice(3,6);
+      }
+      console.log(data);
+    })
+    this.service.getPopularesParaEnanos().subscribe(data =>{
+      if(data.results.length>6){
+        this.popularesParaEnanos1 = data.results.slice(0,3);
+        this.popularesParaEnanos2 = data.results.slice(3,6);
+      }
+      console.log(data);
+    })
 
     this.service.getPeliculasEnCartelera().subscribe(data =>{
       if(data.results.length>6){

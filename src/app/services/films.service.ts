@@ -13,16 +13,11 @@ export class FilmsService {
   constructor(private jsonp:Jsonp) { }
 
   getPopulares(){
-    let url = `${ this.urlMoviedb }/discover/movie?sort_by=popularity.desc&api_key=${ this.apikey }&language=es&callback=JSONP_CALLBACK`;
+    let url = `${ this.urlMoviedb }/discover/movie?sort_by=popularity.desc&api_key=${ this.apikey }&language=es&certification.gte=NC-17&certification_country=US&callback=JSONP_CALLBACK`;
 
     return this.jsonp.get(url).map(resp => {
       return resp.json()
     });
-    //return this.jsonp.request(url).
-    //  map(resp => {
-    //    return resp.json()
-    //  });
-
   }
 
   getPopularesParaEnanos(){
@@ -31,7 +26,6 @@ export class FilmsService {
     return this.jsonp.get(url).map(resp => {
       return resp.json()
     });
-    //return undefined;
   }
 
   getPeliculasEnCartelera(){
