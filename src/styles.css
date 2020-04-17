@@ -49,6 +49,9 @@ li article span{
   width: 250px;
   height: 141px;
 }
+.btn:hover, .card-img{
+  cursor: pointer;
+}
 
 /* Animaciones */
 .animated {

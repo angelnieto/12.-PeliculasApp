@@ -15,25 +15,37 @@
               <section class="img-column">
                 <article *ngFor="let film of peliculasEnCartelera1;let i = index">
                   <figure *ngIf="film.backdrop_path && i==0" class="card-img img-big">
-                            <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.backdrop_path}}" alt="Card image">
+                            <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.backdrop_path}}" alt="Card image" (click)="getDetail(film.id)">
                             <span>
                                   <p class="card-text">{{film.title}}</p>
                             </span>
                   </figure>
                   <figure *ngIf="film.poster_path && !film.backdrop_path && i==0" class="card-img img-big">
-                            <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.poster_path}}" alt="Card image">
+                            <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.poster_path}}" alt="Card image"  (click)="getDetail(film.id)">
+                            <span>
+                                  <p class="card-text">{{film.title}}</p>
+                            </span>
+                  </figure>
+                  <figure *ngIf="!film.poster_path && !film.backdrop_path && i==0" class="card-img img-big">
+                            <img  src="../../../assets/default.webp" alt="Card image"  (click)="getDetail(film.id)" class="img-big">
                             <span>
                                   <p class="card-text">{{film.title}}</p>
                             </span>
                   </figure>
                   <figure *ngIf="film.backdrop_path && i<3 && i>0" class="card-img img-little">
-                            <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.backdrop_path}}" alt="Card image">
+                            <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.backdrop_path}}" alt="Card image"  (click)="getDetail(film.id)">
                             <span>
                                   <p class="card-text">{{film.title}}</p>
                             </span>
                   </figure>
                   <figure *ngIf="film.poster_path && !film.backdrop_path && i<3 && i>0" class="card-img img-little">
-                            <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.poster_path}}" alt="Card image">
+                            <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.poster_path}}" alt="Card image"  (click)="getDetail(film.id)">
+                            <span>
+                                  <p class="card-text">{{film.title}}</p>
+                            </span>
+                  </figure>
+                  <figure *ngIf="!film.poster_path && !film.backdrop_path && i<3 && i>0" class="card-img img-little">
+                            <img  src="../../../assets/default.webp" alt="Card image"  (click)="getDetail(film.id)" class="img-little">
                             <span>
                                   <p class="card-text">{{film.title}}</p>
                             </span>
@@ -45,25 +57,37 @@
             <section class="img-column">
               <article *ngFor="let film of peliculasEnCartelera2;let j = index">
                 <figure *ngIf="film.backdrop_path && j==2" class="card-img img-big">
-                          <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.backdrop_path}}" alt="Card image">
+                          <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.backdrop_path}}" alt="Card image" (click)="getDetail(film.id)">
                           <span>
                                 <p class="card-text">{{film.title}}</p>
                           </span>
                 </figure>
                 <figure *ngIf="film.poster_path && !film.backdrop_path && j==2" class="card-img img-big">
-                          <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.poster_path}}" alt="Card image">
+                          <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.poster_path}}" alt="Card image" (click)="getDetail(film.id)">
+                          <span>
+                                <p class="card-text">{{film.title}}</p>
+                          </span>
+                </figure>
+                <figure *ngIf="!film.poster_path && !film.backdrop_path && j==2" class="card-img img-big">
+                          <img  src="../../../assets/default.webp" alt="Card image"  (click)="getDetail(film.id)" class="img-big">
                           <span>
                                 <p class="card-text">{{film.title}}</p>
                           </span>
                 </figure>
                 <figure *ngIf="film.backdrop_path && j<2 && j>=0" class="card-img img-little">
-                          <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.backdrop_path}}" alt="Card image">
+                          <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.backdrop_path}}" alt="Card image" (click)="getDetail(film.id)">
                           <span>
                                 <p class="card-text">{{film.title}}</p>
                           </span>
                 </figure>
                 <figure *ngIf="film.poster_path && !film.backdrop_path && j<2 && j>=0" class="card-img img-little">
-                          <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.poster_path}}" alt="Card image">
+                          <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.poster_path}}" alt="Card image" (click)="getDetail(film.id)">
+                          <span>
+                                <p class="card-text">{{film.title}}</p>
+                          </span>
+                </figure>
+                <figure *ngIf="!film.poster_path && !film.backdrop_path && j<2 && j>=0" class="card-img img-little">
+                          <img  src="../../../assets/default.webp" alt="Card image"  (click)="getDetail(film.id)" class="img-little">
                           <span>
                                 <p class="card-text">{{film.title}}</p>
                           </span>
@@ -83,25 +107,37 @@
               <section class="img-column">
                 <article *ngFor="let film of populares1;let i = index">
                   <figure *ngIf="film.backdrop_path && i==0" class="card-img img-big">
-                            <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.backdrop_path}}" alt="Card image">
+                            <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.backdrop_path}}" alt="Card image" (click)="getDetail(film.id)">
                             <span>
                                   <p class="card-text">{{film.title}}</p>
                             </span>
                   </figure>
-                  <figure *ngIf="film.poster_path && !film.backdrop_path && i==0" class="card-img img-big">
-                            <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.poster_path}}" alt="Card image">
+                  <figure *ngIf="film.poster_path && !film.backdrop_path && i==0" class="card-img img-big" >
+                            <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.poster_path}}" alt="Card image" (click)="getDetail(film.id)">
+                            <span>
+                                  <p class="card-text">{{film.title}}</p>
+                            </span>
+                  </figure>
+                  <figure *ngIf="!film.poster_path && !film.backdrop_path && i==0" class="card-img img-big">
+                            <img  src="../../../assets/default.webp" alt="Card image"  (click)="getDetail(film.id)" class="img-big">
                             <span>
                                   <p class="card-text">{{film.title}}</p>
                             </span>
                   </figure>
                   <figure *ngIf="film.backdrop_path && i<3 && i>0" class="card-img img-little">
-                            <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.backdrop_path}}" alt="Card image">
+                            <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.backdrop_path}}" alt="Card image" (click)="getDetail(film.id)">
                             <span>
                                   <p class="card-text">{{film.title}}</p>
                             </span>
                   </figure>
                   <figure *ngIf="film.poster_path && !film.backdrop_path && i<3 && i>0" class="card-img img-little">
-                            <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.poster_path}}" alt="Card image">
+                            <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.poster_path}}" alt="Card image" (click)="getDetail(film.id)">
+                            <span>
+                                  <p class="card-text">{{film.title}}</p>
+                            </span>
+                  </figure>
+                  <figure *ngIf="!film.poster_path && !film.backdrop_path && i<3 && i>0" class="card-img img-little">
+                            <img  src="../../../assets/default.webp" alt="Card image"  (click)="getDetail(film.id)" class="img-little">
                             <span>
                                   <p class="card-text">{{film.title}}</p>
                             </span>
@@ -113,30 +149,41 @@
             <section class="img-column">
               <article *ngFor="let film of populares2;let j = index">
                 <figure *ngIf="film.backdrop_path && j==2" class="card-img img-big">
-                          <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.backdrop_path}}" alt="Card image">
+                          <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.backdrop_path}}" alt="Card image" (click)="getDetail(film.id)">
                           <span>
                                 <p class="card-text">{{film.title}}</p>
                           </span>
                 </figure>
                 <figure *ngIf="film.poster_path && !film.backdrop_path && j==2" class="card-img img-big">
-                          <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.poster_path}}" alt="Card image">
+                          <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.poster_path}}" alt="Card image" (click)="getDetail(film.id)">
+                          <span>
+                                <p class="card-text">{{film.title}}</p>
+                          </span>
+                </figure>
+                <figure *ngIf="!film.poster_path && !film.backdrop_path && j==2" class="card-img img-big">
+                          <img  src="../../../assets/default.webp" alt="Card image"  (click)="getDetail(film.id)" class="img-big">
                           <span>
                                 <p class="card-text">{{film.title}}</p>
                           </span>
                 </figure>
                 <figure *ngIf="film.backdrop_path && j<2 && j>=0" class="card-img img-little">
-                          <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.backdrop_path}}" alt="Card image">
+                          <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.backdrop_path}}" alt="Card image" (click)="getDetail(film.id)">
                           <span>
                                 <p class="card-text">{{film.title}}</p>
                           </span>
                 </figure>
                 <figure *ngIf="film.poster_path && !film.backdrop_path && j<2 && j>=0" class="card-img img-little">
-                          <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.poster_path}}" alt="Card image">
+                          <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.poster_path}}" alt="Card image" (click)="getDetail(film.id)">
                           <span>
                                 <p class="card-text">{{film.title}}</p>
                           </span>
                 </figure>
-
+                <figure *ngIf="!film.poster_path && !film.backdrop_path && j<2 && j>=0" class="card-img img-little">
+                          <img  src="../../../assets/default.webp" alt="Card image"  (click)="getDetail(film.id)" class="img-little">
+                          <span>
+                                <p class="card-text">{{film.title}}</p>
+                          </span>
+                </figure>
               </article>
           </section>
         </div>
@@ -152,25 +199,37 @@
               <section class="img-column">
                 <article *ngFor="let film of popularesParaEnanos1;let i = index">
                   <figure *ngIf="film.backdrop_path && i==0" class="card-img img-big">
-                            <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.backdrop_path}}" alt="Card image">
+                            <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.backdrop_path}}" alt="Card image" (click)="getDetail(film.id)">
                             <span>
                                   <p class="card-text">{{film.title}}</p>
                             </span>
                   </figure>
                   <figure *ngIf="film.poster_path && !film.backdrop_path && i==0" class="card-img img-big">
-                            <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.poster_path}}" alt="Card image">
+                            <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.poster_path}}" alt="Card image" (click)="getDetail(film.id)">
+                            <span>
+                                  <p class="card-text">{{film.title}}</p>
+                            </span>
+                  </figure>
+                  <figure *ngIf="!film.poster_path && !film.backdrop_path && i==0" class="card-img img-big">
+                            <img  src="../../../assets/default.webp" alt="Card image"  (click)="getDetail(film.id)" class="img-big">
                             <span>
                                   <p class="card-text">{{film.title}}</p>
                             </span>
                   </figure>
                   <figure *ngIf="film.backdrop_path && i<3 && i>0" class="card-img img-little">
-                            <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.backdrop_path}}" alt="Card image">
+                            <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.backdrop_path}}" alt="Card image" (click)="getDetail(film.id)">
                             <span>
                                   <p class="card-text">{{film.title}}</p>
                             </span>
                   </figure>
                   <figure *ngIf="film.poster_path && !film.backdrop_path && i<3 && i>0" class="card-img img-little">
-                            <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.poster_path}}" alt="Card image">
+                            <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.poster_path}}" alt="Card image" (click)="getDetail(film.id)">
+                            <span>
+                                  <p class="card-text">{{film.title}}</p>
+                            </span>
+                  </figure>
+                  <figure *ngIf="!film.poster_path && !film.backdrop_path && i<3 && i>0" class="card-img img-little">
+                            <img  src="../../../assets/default.webp" alt="Card image"  (click)="getDetail(film.id)" class="img-little">
                             <span>
                                   <p class="card-text">{{film.title}}</p>
                             </span>
@@ -182,30 +241,41 @@
             <section class="img-column">
               <article *ngFor="let film of popularesParaEnanos2;let j = index">
                 <figure *ngIf="film.backdrop_path && j==2" class="card-img img-big">
-                          <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.backdrop_path}}" alt="Card image">
+                          <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.backdrop_path}}" alt="Card image" (click)="getDetail(film.id)">
                           <span>
                                 <p class="card-text">{{film.title}}</p>
                           </span>
                 </figure>
                 <figure *ngIf="film.poster_path && !film.backdrop_path && j==2" class="card-img img-big">
-                          <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.poster_path}}" alt="Card image">
+                          <img  src="https://image.tmdb.org/t/p/w500_and_h282_bestv2/{{film.poster_path}}" alt="Card image" (click)="getDetail(film.id)">
+                          <span>
+                                <p class="card-text">{{film.title}}</p>
+                          </span>
+                </figure>
+                <figure *ngIf="!film.poster_path && !film.backdrop_path && j==2" class="card-img img-big">
+                          <img  src="../../../assets/default.webp" alt="Card image"  (click)="getDetail(film.id)" class="img-big">
                           <span>
                                 <p class="card-text">{{film.title}}</p>
                           </span>
                 </figure>
                 <figure *ngIf="film.backdrop_path && j<2 && j>=0" class="card-img img-little">
-                          <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.backdrop_path}}" alt="Card image">
+                          <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.backdrop_path}}" alt="Card image" (click)="getDetail(film.id)">
                           <span>
                                 <p class="card-text">{{film.title}}</p>
                           </span>
                 </figure>
                 <figure *ngIf="film.poster_path && !film.backdrop_path && j<2 && j>=0" class="card-img img-little">
-                          <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.poster_path}}" alt="Card image">
+                          <img  src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.poster_path}}" alt="Card image" (click)="getDetail(film.id)">
                           <span>
                                 <p class="card-text">{{film.title}}</p>
                           </span>
                 </figure>
-
+                <figure *ngIf="!film.poster_path && !film.backdrop_path && j<2 && j>=0" class="card-img img-little">
+                          <img  src="../../../assets/default.webp" alt="Card image"  (click)="getDetail(film.id)" class="img-little">
+                          <span>
+                                <p class="card-text">{{film.title}}</p>
+                          </span>
+                </figure>
               </article>
           </section>
         </div>

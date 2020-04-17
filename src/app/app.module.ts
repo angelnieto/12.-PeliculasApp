@@ -2,21 +2,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {HttpModule, JsonpModule} from '@angular/http';
-
+//componentes
 import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+import { DetailComponent } from './components/detail/detail.component';
+import { SearchComponent } from './components/search/search.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
 //servicios
 import { FilmsService } from './services/films.service';
-import { HomeComponent } from './components/home/home.component';
-import { SearchComponent } from './components/search/search.component';
 //rutas
 import { APP_ROUTING } from './app.routes';
-import { NavbarComponent } from './components/shared/navbar/navbar.component';
-
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    DetailComponent,
     SearchComponent,
     NavbarComponent
   ],

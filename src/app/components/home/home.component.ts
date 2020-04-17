@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FilmsService } from '../../services/films.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
   peliculasEnCartelera1:any[]=[];
   peliculasEnCartelera2:any[]=[];
 
-  constructor(private service:FilmsService) { }
+  constructor(private service:FilmsService, private router:Router) { }
 
   ngOnInit() {
     this.service.getPopulares().subscribe(data =>{
@@ -40,6 +41,10 @@ export class HomeComponent implements OnInit {
       console.log(data);
 
     })
+  }
+
+  getDetail(idx:number){
+    this.router.navigate(['pelicula', idx, 'home']);
   }
 
 }
