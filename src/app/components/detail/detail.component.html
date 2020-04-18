@@ -1,4 +1,22 @@
-<h1>{{movie.title}}</h1>
-<hr>
 <div class="container main-container animated fadeIn">
+  <section>
+    <h1>{{movie.title}}</h1>
+  </section>
+  <section class="row">
+    <article class="col">
+      <figure *ngIf="movie.poster_path" class="card-img">
+                <img  src="https://image.tmdb.org/t/p/w1280/{{movie.poster_path}}" alt="Card image" class="img-poster">
+      </figure>
+      <figure *ngIf="!movie.poster_path" class="card-img">
+                <img  src="../../../assets/default.webp" alt="Card image" class="img-poster">
+      </figure>
+    </article>
+    <article class="col">
+      <h2>Sinopsis</h2>
+      <hr>
+      <p>{{movie.overview}}</p>
+      <h2>Frase célebre</h2>
+      <p>{{movie.overview | slice:0:10}}</p>
+    </article>
+  </section>
 </div>

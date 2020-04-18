@@ -2,6 +2,7 @@
 .main-container, header{
   padding:2rem 6rem ;
   margin:0;
+  width:100%;
 }
 header{
   background-color: lightgrey;
@@ -48,6 +49,10 @@ li article span{
 .img-little{
   width: 250px;
   height: 141px;
+}
+.img-poster{
+  width:400px;
+  height:533px;
 }
 .btn:hover, .card-img{
   cursor: pointer;
