@@ -13,9 +13,9 @@
         <a class="nav-link" [routerLink]="['buscar']">Buscar</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    <form (ngSubmit)="buscar(formulario)" #formulario="ngForm"  class="form-inline my-2 my-lg-0" novalidate>
+      <input class="form-control mr-sm-2" type="text" placeholder="Buscar" name="titulo" [(ngModel)]="title" #titulo="ngModel" required minlength="5">
+      <button [disabled]="!titulo.valid" class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
     </form>
   </div>
 </nav>

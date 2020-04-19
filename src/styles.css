@@ -57,10 +57,10 @@ li article span{
   width:400px;
   height:533px;
 }
-.card-img-top, .card button{
+.card-img-top, .card-body button.btn-outline-primary{
     width: 100%;
 }
-.btn:hover, .card-img{
+.btn:hover:not([disabled]), .card-img{
   cursor: pointer;
 }
 #moviePoster{
@@ -88,6 +88,9 @@ li article span{
 }
 .card-body{
   padding: 10px;
+}
+.not-valid{
+  border-color:red!important;
 }
 
 /* Animaciones */

@@ -6,9 +6,9 @@ import {DetailComponent} from './components/detail/detail.component';
 const APP_ROUTES: Routes =[
   {path: 'home', component: HomeComponent},
   {path: 'buscar', component: SearchComponent},
-  {path: 'buscar/:value', component: SearchComponent},
+  {path: 'buscar/:title', component: SearchComponent},
   {path: 'pelicula/:id/:origin', component: DetailComponent},
-  {path: 'pelicula/:id/:origin/:value', component: DetailComponent},
+  {path: 'pelicula/:id/:origin/:title', component: DetailComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'  }
 ];
 

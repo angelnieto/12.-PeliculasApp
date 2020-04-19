@@ -1,7 +1,7 @@
 <div class="container main-container animated fadeIn">
- <form id="buscar">
+ <form #buscarForm="ngForm" (keyup.enter)="onEnter(buscarForm)" novalidate>
     <h6>Buscar:</h6>
-    <input #box class="form-control mr-sm-2" type="text" placeholder="Buscar una película" (keyup.enter)="onEnter(box.value)">
+    <input #titulo="ngModel" name="titulo" [(ngModel)]="title" [ngClass]="{'not-valid':(!titulo.valid && titulo.value !== undefined)}" class="form-control mr-sm-2" type="text" placeholder="Buscar una película" minlength="5" required>
  </form>
  <div class="card-columns">
      <div class="card" *ngFor="let film of peliculas;let i = index">

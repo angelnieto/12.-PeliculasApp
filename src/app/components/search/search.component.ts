@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FilmsService } from '../../services/films.service';
 import { Movie } from '../../model/movie.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
@@ -10,29 +11,39 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class SearchComponent implements OnInit {
 
   private peliculas:Array<Movie> = [];
-  private value:string;
+  private title:string;
+  private buscarForm:NgForm;
 
   constructor(private service: FilmsService, private activatedRoute:ActivatedRoute, private router:Router) {
+
   }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params =>{
-      if(params['value']){
-        this.onEnter(params['value']);
+      if(params['title']){
+        this.title = params['title'];
+        this.getPeliculas();
       }
     })
   }
 
-  onEnter(value:string){
-    this.value = value;
-    this.service.getPeliculas(value).subscribe(data =>{
+  onEnter(buscarForm:NgForm){
+    console.log(buscarForm);
+    if(buscarForm.valid){
+      this.getPeliculas();
+    } else if(this.title == undefined){
+      this.title = "";
+    }
+  }
+
+  getPeliculas(){
+    this.service.getPeliculas(this.title).subscribe(data =>{
       this.peliculas = data.results;
-      console.log(data.results);
     })
   }
 
   getDetail(idx:number){
-    this.router.navigate(['pelicula', idx, 'buscar', this.value]);
+    this.router.navigate(['pelicula', idx, 'buscar', this.title]);
   }
 
 }

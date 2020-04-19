@@ -16,7 +16,7 @@ export class DetailComponent {
   constructor(private activatedRoute:ActivatedRoute, private service: FilmsService, private router:Router){
     this.activatedRoute.params.subscribe(params =>{
       this.origin = params['origin'];
-      this.searchValue = params['value'];
+      this.searchValue = params['title'];
       this.movie = service.getPelicula(params['id']);
     })
   }
@@ -24,6 +24,11 @@ export class DetailComponent {
   ngOnInit(){ }
 
   back(){
-    this.router.navigate([ this.origin, this.searchValue ]);
+    if(this.searchValue){
+          this.router.navigate([ this.origin, this.searchValue ]);
+    } else {
+      this.router.navigate([ this.origin ]);
+    }
+
   }
 }
