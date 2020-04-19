@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { ActivatedRoute , Router } from '@angular/router';
 import { FilmsService } from '../../services/films.service';
 import { Movie } from '../../model/movie.model';
 
@@ -10,14 +10,19 @@ import { Movie } from '../../model/movie.model';
 export class DetailComponent {
 
   movie:Movie;
+  origin:string;
 
-  constructor(private activatedRoute:ActivatedRoute , service: FilmsService){
+  constructor(private activatedRoute:ActivatedRoute , service: FilmsService, private router:Router){
     this.activatedRoute.params.subscribe(params =>{
-      console.log( params['id'] + " , " + params['origin']);
+      this.origin = params['origin'];
       this.movie = service.getPelicula(params['id']);
       console.log(this.movie);
     })
   }
 
   ngOnInit(){ }
+
+  back(){
+    this.router.navigate([ this.origin ]);
+  }
 }

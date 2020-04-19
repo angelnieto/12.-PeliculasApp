@@ -23,6 +23,9 @@ li article span{
   left: 10px;
   max-width: 90%;
 }
+.card{
+  border: 0;
+}
 .card-text{
   opacity: 0.7;
   background-color: black;
@@ -57,7 +60,18 @@ li article span{
 .btn:hover, .card-img{
   cursor: pointer;
 }
-
+#moviePoster{
+  margin-right: 20px;
+}
+.rating{
+  border-radius: 5px;
+  background-color: dodgerblue;
+  color: white;
+  padding: 0 5px;
+}
+#popularity{
+  margin-bottom: 0;
+}
 /* Animaciones */
 .animated {
   -webkit-animation-duration: 1s;
