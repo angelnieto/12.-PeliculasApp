@@ -57,6 +57,9 @@ li article span{
   width:400px;
   height:533px;
 }
+.card-img-top, .card button{
+    width: 100%;
+}
 .btn:hover, .card-img{
   cursor: pointer;
 }
@@ -72,6 +75,20 @@ li article span{
 #popularity{
   margin-bottom: 0;
 }
+.card-columns{
+  padding : 10px 0;
+}
+#buscar{
+  padding: 0 10px;
+}
+.card{
+  border: 2px solid lightgrey;
+  margin: 10px;
+}
+.card-body{
+  padding: 10px;
+}
+
 /* Animaciones */
 .animated {
   -webkit-animation-duration: 1s;

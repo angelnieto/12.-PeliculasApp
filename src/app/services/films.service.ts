@@ -71,4 +71,11 @@ export class FilmsService {
     return movie;
   }
 
+  getPeliculas(value:string){
+      let url = `${ this.urlMoviedb }/search/movie?sort_by=popularity.asc&api_key=${ this.apikey }&language=es-ES&include_adult=true&query=${value}&callback=JSONP_CALLBACK`;
+      return this.jsonp.get(url).map(resp => {
+            return resp.json()
+      });
+  }
+
 }

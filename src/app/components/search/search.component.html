@@ -1,3 +1,26 @@
-<p>
-  search works!
-</p>
+<div class="container main-container animated fadeIn">
+ <form #buscar>
+    <h6>Buscar:</h6>
+    <input #box class="form-control mr-sm-2" type="text" placeholder="Buscar una película" (keyup.enter)="onEnter(box.value)">
+ </form>
+ <div class="card-columns">
+     <div class="card" *ngFor="let film of peliculas;let i = index">
+       <figure *ngIf="film.backdrop_path">
+                 <img  class="card-img-top" src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.backdrop_path}}" alt="Card image"  (click)="getDetail(film.id)">
+       </figure>
+       <figure *ngIf="film.poster_path && !film.backdrop_path">
+                 <img class="card-img-top" src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.poster_path}}" alt="Card image"  (click)="getDetail(film.id)">
+       </figure>
+       <figure *ngIf="!film.poster_path && !film.backdrop_path" >
+                 <img  src="../../../assets/default.webp" alt="Card image"  (click)="getDetail(film.id)" class="card-img-top">
+       </figure>
+  <!--     <img src="..." class="card-img-top" alt="...">   -->
+       <div class="card-body">
+         <h5 class="card-title">{{film.title}}</h5>
+         <p>{{ film.overview | slice:0:200 }}...</p>
+         <button type="button" class="btn btn-outline-primary" (click)="getDetail(film.id)">Ver más ...</button>
+       </div>
+     </div>
+ </div>
+
+</div>

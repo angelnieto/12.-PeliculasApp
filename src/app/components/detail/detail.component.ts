@@ -12,7 +12,7 @@ export class DetailComponent {
   movie:Movie;
   origin:string;
 
-  constructor(private activatedRoute:ActivatedRoute , service: FilmsService, private router:Router){
+  constructor(private activatedRoute:ActivatedRoute, private service: FilmsService, private router:Router){
     this.activatedRoute.params.subscribe(params =>{
       this.origin = params['origin'];
       this.movie = service.getPelicula(params['id']);
