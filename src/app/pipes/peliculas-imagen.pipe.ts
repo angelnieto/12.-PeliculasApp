@@ -6,8 +6,8 @@ import { Movie } from '../model/movie.model';
 })
 export class PeliculasImagenPipe implements PipeTransform {
 
-  transform(pelicula: Movie): any {
-    if(pelicula.backdrop_path){
+  transform(pelicula: Movie, detail?: boolean): any {
+    if(pelicula.backdrop_path && !detail){
       return "https://image.tmdb.org/t/p/w500" + pelicula.backdrop_path;
     } else if(pelicula.poster_path){
       return "https://image.tmdb.org/t/p/w500" + pelicula.poster_path;

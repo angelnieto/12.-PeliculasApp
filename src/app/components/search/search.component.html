@@ -5,14 +5,8 @@
  </form>
  <div class="card-columns">
      <div class="card" *ngFor="let film of peliculas;let i = index">
-       <figure *ngIf="film.backdrop_path">
-                 <img  class="card-img-top" src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.backdrop_path}}" alt="Card image"  (click)="getDetail(film.id)">
-       </figure>
-       <figure *ngIf="film.poster_path && !film.backdrop_path">
-                 <img class="card-img-top" src="https://image.tmdb.org/t/p/w250_and_h141_bestv2/{{film.poster_path}}" alt="Card image"  (click)="getDetail(film.id)">
-       </figure>
-       <figure *ngIf="!film.poster_path && !film.backdrop_path" >
-                 <img  src="../../../assets/default.webp" alt="Card image"  (click)="getDetail(film.id)" class="card-img-top">
+       <figure>
+                 <img src="{{film | peliculasImagen}}" (click)="getDetail(film.id)" class="card-img-top">
        </figure>
   <!--     <img src="..." class="card-img-top" alt="...">   -->
        <div class="card-body">
