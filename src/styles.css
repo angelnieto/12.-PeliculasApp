@@ -47,11 +47,11 @@ li article span{
 }
 .img-big{
   width:500px;
-  height: 281px;
+  height: 275px;
 }
 .img-little{
   width: 250px;
-  height: 141px;
+  height: 175px;
 }
 .img-poster{
   width:400px;
@@ -82,7 +82,7 @@ li article span{
 #buscar{
   padding: 0 20px;
 }
-.card{
+.card-columns .card{
   border: 2px solid lightgrey;
   margin: 10px;
 }

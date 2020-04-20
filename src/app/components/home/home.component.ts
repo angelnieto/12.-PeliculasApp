@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FilmsService } from '../../services/films.service';
 import { Router } from '@angular/router';
+import { Movie } from '../../model/movie.model';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +9,12 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  populares1:any[]=[];
-  populares2:any[]=[];
-  popularesParaEnanos1:any[]=[];
-  popularesParaEnanos2:any[]=[];
-  peliculasEnCartelera1:any[]=[];
-  peliculasEnCartelera2:any[]=[];
+  populares1:Movie[];
+  populares2:Movie[];
+  popularesParaEnanos1:Movie[];
+  popularesParaEnanos2:Movie[];
+  peliculasEnCartelera1:Movie[];
+  peliculasEnCartelera2:Movie[];
 
   constructor(private service:FilmsService, private router:Router) { }
 

@@ -12,6 +12,8 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FilmsService } from './services/films.service';
 //rutas
 import { APP_ROUTING } from './app.routes';
+//pipes
+import { PeliculasImagenPipe } from './pipes/peliculas-imagen.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { APP_ROUTING } from './app.routes';
     HomeComponent,
     DetailComponent,
     SearchComponent,
-    NavbarComponent
+    NavbarComponent,
+    PeliculasImagenPipe
   ],
   imports: [
     BrowserModule,
