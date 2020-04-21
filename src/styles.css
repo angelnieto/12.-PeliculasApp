@@ -57,7 +57,7 @@ li article span{
   width:400px;
   height:533px;
 }
-.card-img-top, .card-body button.btn-outline-primary{
+.card-img-top{
     width: 100%;
 }
 .btn:hover:not([disabled]), .card-img{
