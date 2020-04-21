@@ -1,4 +1,4 @@
-<div class="container main-container animated fadeIn">
+<div *ngIf="movie" class="container main-container animated fadeIn">
   <section>
     <h1>{{movie.title}}</h1>
   </section>
@@ -15,8 +15,8 @@
           <br>
           <p>{{movie.overview}}</p>
           <h3>Frase célebre</h3>
-          <p>{{movie.overview | slice:0:80}}</p>
-          <p id="popularity">Popularidad: <span class="rating">{{movie.popularity}}</span></p>
+          <p>{{movie.tagline}}</p>
+          <p id="popularity">Popularidad: <span class="rating">{{movie.popularity | number:".0-0"}}/10</span></p>
           <p>Voto promedio: <span class="rating">{{movie.vote_average}}</span></p>
           <button type="button" class="btn btn-outline-danger" (click)="back()">Regresar</button>
         </div>

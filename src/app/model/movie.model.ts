@@ -12,4 +12,5 @@ export class Movie{
   vote_average:number;
   overview:string;
   release_date:string;
+  tagline:string;
 }

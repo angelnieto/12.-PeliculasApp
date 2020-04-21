@@ -62,13 +62,8 @@ export class FilmsService {
   }
 
   getPelicula(idx:number){
-    let movie:Movie;
-    for(let j=0 ; j < this.peliculas.length ; j++){
-      if(this.peliculas[j].id == idx){
-        movie = this.peliculas[j];
-      }
-    }
-    return movie;
+    let url = `${ this.urlMoviedb }/movie/${idx}?api_key=${ this.apikey }&language=es-ES&callback=JSONP_CALLBACK`;
+    return this.jsonp.get(url).map(resp => resp.json());
   }
 
   getPeliculas(title:string){

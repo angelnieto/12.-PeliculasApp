@@ -17,7 +17,9 @@ export class DetailComponent {
     this.activatedRoute.params.subscribe(params =>{
       this.origin = params['origin'];
       this.searchValue = params['title'];
-      this.movie = service.getPelicula(params['id']);
+      service.getPelicula(params['id']).subscribe( pelicula =>{
+        this.movie = pelicula;
+      });
     })
   }
 

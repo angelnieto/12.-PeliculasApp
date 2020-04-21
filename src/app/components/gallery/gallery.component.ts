@@ -1,6 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Movie } from '../../model/movie.model';
-import { Router } from '@angular/router';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-gallery',
@@ -11,10 +9,5 @@ export class GalleryComponent{
   @Input('peliculas') peliculas;
   @Input('titulo') titulo;
 
-  constructor(private router:Router) { }
-
-  getDetail(idx:number){
-    this.router.navigate(['pelicula', idx, 'home']);
-  }
-
+  constructor() { }
 }
