@@ -1,0 +1,40 @@
+<h3>{{titulo}}</h3>
+<ul>
+    <li>
+        <div class="img-container">
+
+          <!--    Primera columna  -->
+          <section class="img-column">
+            <article *ngFor="let film of peliculas;let i = index">
+              <div *ngIf="i==0" class="card-img img-big" [ngStyle]="{'background-image':'url(' + (film | peliculasImagen)+')','background-size' : '500px auto'}" (click)="getDetail(film.id)">
+                <span>
+                      <p class="card-text">{{film.title}}</p>
+                </span>
+              </div>
+              <div *ngIf="i<3 && i>0" class="card-img img-little" [ngStyle]="{'background-image':'url(' + (film | peliculasImagen)+')','background-size' : '250px auto'}" (click)="getDetail(film.id)">
+                <span>
+                      <p class="card-text">{{film.title}}</p>
+                </span>
+              </div>
+            </article>
+        </section>
+
+          <!--    Segunda columna  -->
+        <section class="img-column">
+          <article *ngFor="let film of peliculas;let i = index">
+            <div *ngIf="i==5" class="card-img img-big" [ngStyle]="{'background-image':'url(' + (film | peliculasImagen)+')','background-size' : '500px auto'}" (click)="getDetail(film.id)">
+              <span>
+                    <p class="card-text">{{film.title}}</p>
+              </span>
+            </div>
+            <div *ngIf="i<5 && i>=3" class="card-img img-little" [ngStyle]="{'background-image':'url(' + (film | peliculasImagen)+')','background-size' : '250px auto'}" (click)="getDetail(film.id)">
+              <span>
+                    <p class="card-text">{{film.title}}</p>
+              </span>
+            </div>
+        </article>
+      </section>
+    </div>
+  </li>
+</ul>
+<br>

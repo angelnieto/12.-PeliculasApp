@@ -19,7 +19,7 @@ figure{
 li article span{
   display: inline-block;
   position:relative;
-  top: -54px;
+  top: 65%;
   left: 10px;
   max-width: 90%;
 }
@@ -47,11 +47,11 @@ li article span{
 }
 .img-big{
   width:500px;
-  height: 275px;
+  height: 280px;
 }
 .img-little{
   width: 250px;
-  height: 175px;
+  height: 140px;
 }
 .img-poster{
   width:400px;

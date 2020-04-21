@@ -14,6 +14,7 @@ import { FilmsService } from './services/films.service';
 import { APP_ROUTING } from './app.routes';
 //pipes
 import { PeliculasImagenPipe } from './pipes/peliculas-imagen.pipe';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PeliculasImagenPipe } from './pipes/peliculas-imagen.pipe';
     DetailComponent,
     SearchComponent,
     NavbarComponent,
-    PeliculasImagenPipe
+    PeliculasImagenPipe,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
